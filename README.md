@@ -3,9 +3,27 @@
 * The first part of the project was to learn [Tensorflow2.0](https://www.tensorflow.org/tutorials).
 I followed the tutorial given by [Nour Islam Mokhtari](https://aifee.teachable.com/).
 So, i you are interested in the work or want to learn Tensorflow, make sure to check him out.<br>
-* The Second part of the repo is to reproduce the work given by [CHRIS DEOTTE](https://www.kaggle.com/cdeotte), where he posted a great article about [How to choose CNN Architecture MNIST](https://www.kaggle.com/code/cdeotte/how-to-choose-cnn-architecture-mnist/notebook#5.-Advanced-features) on [Kaggle.com](https://www.kaggle.com/).<br> 
+* The second part of the repo is to reproduce the work given by [CHRIS DEOTTE](https://www.kaggle.com/cdeotte), where he posted a great article about [How to choose CNN Architecture MNIST](https://www.kaggle.com/code/cdeotte/how-to-choose-cnn-architecture-mnist/notebook#5.-Advanced-features) on [Kaggle.com](https://www.kaggle.com/).<br> 
 Here I chose several models mentioned in this article and create a comparison chart in regard of the validation accuracy. For more details, make sure to check it out if you are interested.<br>
 
+### Dataset
+Both the first and second part of the project uses MNIST dataset, the very same dataset I used in the other repo, [simple-neural-network-python](https://github.com/mike1393/simple-neural-network-python). In that repo, I built a fully connected neural network from scratch using python. Feel free to check it out if you are interested.<br>
+
 ### Learning Tensorflow2.0, Keras
+The first goal of this project is to learn how to use Tensorflow2.0 to classify handwritten digits.
+I demonstrated three methods to build a model in this framework. For detail implementation, please see [./models.py](https://github.com/mike1393/intro-to-tensorflow2.0-python/blob/main/models.py)
+1. [Sequential API](https://www.tensorflow.org/api_docs/python/tf/keras/Sequential) (The implementation can be found in [./mnist_example.py](https://github.com/mike1393/intro-to-tensorflow2.0-python/blob/main/mnist_example.py))
+2. [Functional Model API](https://www.tensorflow.org/guide/keras/functional)
+3. [Model Subclassing](https://www.tensorflow.org/guide/keras/custom_layers_and_models)
 
 ### Model Analysis
+The second goal was to reproduce the work of Chris Deotte. In his post, he shared the strategy of finding the best CNN architecture for MNIST.
+Among all the architectures he mentioned, I chose four of them and plot the validation accuracy performance of 5 and 10 epochs respectively.
+Here are the models,
+1. Basic: 32C5-P2-64C5-p2-D128-D10
+2. Deeper CNN: 32C3-32C3-P2-64C3-64C3-P2-D128-D10
+3. Basic w/Dropout: 32C5-P2-Dp40%-64C5-P2-Dp40%-D128-Dp40%-D10
+4. Deeper CNN w/Dropout,BatchNormalization: 32C3-BN-32C3-BN-P2-Dp40%-64C3-BN-64C3-BN-P2-BN-Dp40%-D128-D10
+<br>(32C5 means a convolution layer with 32 feature maps using a 5x5 filter and stride 1. P2 means max pooling using 2x2 filter and stride 2. BN means BatchNormalizer.
+ Dp40% means 40% Dropout.)<br>
+
