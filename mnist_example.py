@@ -1,10 +1,13 @@
 import tensorflow as tf
 from tensorflow.keras.layers import Conv2D, Input, Dense, MaxPool2D, BatchNormalization, GlobalAvgPool2D
+import matplotlib.pyplot as plt
 import numpy as np
 
-# Model building:
+from models import functional_model, MyModel
+from utils import display_samples, from_2D_to_3D, rescale_zero_to_one
+
 # Sequential
-model = tf.keras.Sequential(
+seq_model = tf.keras.Sequential(
     [
         Input((28,28,1)),
         Conv2D(32,(3,3),activation='relu'),
@@ -22,21 +25,32 @@ model = tf.keras.Sequential(
     ]
 )
 
-def preprocess(data):
-    # Normalize the input to make the learning slightly more efficient
-    # normalize data (img) from [0-255] to [0-1]
-    data = data.astype("float")/255
-    # Add the color channel dimension to our input data for Convnet
-    return np.expand_dims(data, axis=-1)
-
 if __name__ == "__main__":
     (x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
+    # # Display samples
+    if False:
+        display_samples(x_train, y_train)
     # Preprocess for both training and testing
-    x_train = preprocess(x_train)
-    x_test = preprocess(x_test)
-    # Since categorical_crossentropy requires label to be one_hot_encoded
+    x_train = from_2D_to_3D(rescale_zero_to_one(x_train))
+    x_test = from_2D_to_3D(rescale_zero_to_one(x_test))
     y_train = tf.keras.utils.to_categorical(y_train,10)
     y_test = tf.keras.utils.to_categorical(y_test,10)
+
+
+    # The following line demonstrates how to create
+    # a neural network model using three different ways.
+    # 1. Sequential API
+    # 2. Functional Model API
+    # 3. Model Class
+    # 2 and 3 can be found in ./models.py. 
+    
+    # # 1. Build the model using Sequential model API
+    # model = seq_model
+    # # 2. Build the model using Functional model API
+    # model = functional_model()
+    # # 3. Build the model using Model Class
+    model = MyModel()
+
     # Compile the model
     model.compile(optimizer="adam", loss="categorical_crossentropy", metrics="accuracy")
     # model training
