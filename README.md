@@ -1,9 +1,9 @@
 # Introduction to Tensorflow2.0 with Python
 ### About this Repo
-* The [first part](https://github.com/mike1393/intro-to-tensorflow2.0-python/edit/main/README.md#part-1-learning-tensorflow20-keras) of the project was to learn [Tensorflow2.0](https://www.tensorflow.org/tutorials).
+* The [first part](https://github.com/mike1393/intro-to-tensorflow2.0-python#part-1-learning-tensorflow20-keras) of the project was to learn [Tensorflow2.0](https://www.tensorflow.org/tutorials).
 I followed the tutorial given by [Nour Islam Mokhtari](https://aifee.teachable.com/).
 So, i you are interested in the work or want to learn Tensorflow, make sure to check him out.:grin:<br>
-* The [second part](https://github.com/mike1393/intro-to-tensorflow2.0-python/edit/main/README.md#part-2-model-analysis) of the repo is to reproduce the work given by [CHRIS DEOTTE](https://www.kaggle.com/cdeotte), where he posted a great article about [How to choose CNN Architecture MNIST](https://www.kaggle.com/code/cdeotte/how-to-choose-cnn-architecture-mnist/notebook#5.-Advanced-features):point_left: on [Kaggle.com](https://www.kaggle.com/).<br> 
+* The [second part](https://github.com/mike1393/intro-to-tensorflow2.0-python#part-2-model-analysis) of the repo is to reproduce the work given by [CHRIS DEOTTE](https://www.kaggle.com/cdeotte), where he posted a great article about [How to choose CNN Architecture MNIST](https://www.kaggle.com/code/cdeotte/how-to-choose-cnn-architecture-mnist/notebook#5.-Advanced-features):point_left: on [Kaggle.com](https://www.kaggle.com/).<br> 
 Here I chose several models mentioned in this article and create a comparison chart in regard of the validation accuracy. For more details, make sure to check it out if you are interested.:thumbsup:<br>
 
 ### Dataset
