@@ -26,4 +26,11 @@ Here are the models,
 4. Deeper CNN w/Dropout,BatchNormalization: 32C3-BN-32C3-BN-P2-Dp40%-64C3-BN-64C3-BN-P2-BN-Dp40%-D128-D10
 <br>(32C5 means a convolution layer with 32 feature maps using a 5x5 filter and stride 1. P2 means max pooling using 2x2 filter and stride 2. BN means BatchNormalizer.
  Dp40% means 40% Dropout.)<br>
+ To prevent repeating myself and for a cleaner code, I chose functional model API to build the model.(detail implementation in [./models.py](https://github.com/mike1393/intro-to-tensorflow2.0-python/blob/main/models.py)) and the rest of the code can be found in [./mnist_kaggle_best.py](https://github.com/mike1393/intro-to-tensorflow2.0-python/blob/main/mnist_kaggle_best.py).
+ #### Result
+   * Trains for 10 epochs<br>
+  ![10 epochs](https://github.com/mike1393/intro-to-tensorflow2.0-python/blob/main/result/epochs_10.png)
+  * By comparing model 1(32C5) and model 2(32C3-32C3), we can see how adding convolution layers can effect the accuracy.
+  * By comparing model 1(32C5) and model 3(32C5-Drop), we can see how adding dropout layers can effect the performance.
+  * Finally, in model 4(32C3-32C3-BN-Drop), we get the best performance by adding more convolution layers, dropout layers, and batch normalization layers.
 
