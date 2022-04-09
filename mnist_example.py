@@ -1,7 +1,5 @@
 import tensorflow as tf
 from tensorflow.keras.layers import Conv2D, Input, Dense, MaxPool2D, BatchNormalization, GlobalAvgPool2D
-import matplotlib.pyplot as plt
-import numpy as np
 
 from models import functional_model, MyModel
 from utils import display_samples, from_2D_to_3D, rescale_zero_to_one
@@ -43,7 +41,7 @@ if __name__ == "__main__":
     # 2. Functional Model API
     # 3. Model Class
     # 2 and 3 can be found in ./models.py. 
-    
+
     # # 1. Build the model using Sequential model API
     # model = seq_model
     # # 2. Build the model using Functional model API
