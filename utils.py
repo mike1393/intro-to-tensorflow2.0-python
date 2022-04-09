@@ -1,6 +1,19 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+def display_performance(number_of_nets, history, names, line_styles):
+    # PLOT ACCURACIES
+    plt.figure(figsize=(15,5))
+    for i in range(number_of_nets):
+        plt.plot(history[i].history['val_accuracy'],linestyle=line_styles[i])
+    plt.title('model accuracy')
+    plt.ylabel('accuracy')
+    plt.xlabel('epoch')
+    plt.legend(names, loc='upper left')
+    axes = plt.gca()
+    axes.set_ylim([0.98,1])
+    plt.show()
+
 def display_samples(samples, labels, row=3, col=3,figure_size=(10,10)):
     plt.figure(figsize=figure_size)
     for i in range(16):
