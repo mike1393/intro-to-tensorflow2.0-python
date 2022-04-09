@@ -9,14 +9,14 @@ Here I chose several models mentioned in this article and create a comparison ch
 ### Dataset
 Both the first and second part of the project uses MNIST dataset, the very same dataset I used in the other repo, [simple-neural-network-python](https://github.com/mike1393/simple-neural-network-python). In that repo, I built a fully connected neural network from scratch using python. Feel free to check it out if you are interested.<br>
 
-### Learning Tensorflow2.0, Keras
+### Part 1. Learning Tensorflow2.0, Keras
 The first goal of this project is to learn how to use Tensorflow2.0 to classify handwritten digits.
 I demonstrated three methods to build a model in this framework. For detail implementation, please see [./models.py](https://github.com/mike1393/intro-to-tensorflow2.0-python/blob/main/models.py)
 1. [Sequential API](https://www.tensorflow.org/api_docs/python/tf/keras/Sequential) (The implementation can be found in [./mnist_example.py](https://github.com/mike1393/intro-to-tensorflow2.0-python/blob/main/mnist_example.py))
 2. [Functional Model API](https://www.tensorflow.org/guide/keras/functional)
 3. [Model Subclassing](https://www.tensorflow.org/guide/keras/custom_layers_and_models)
 
-### Model Analysis
+### Part 2. Model Analysis
 The second goal was to reproduce the work of Chris Deotte. In his post, he shared the strategy of finding the best CNN architecture for MNIST.
 Among all the architectures he mentioned, I chose four of them and plot the validation accuracy performance of 5 and 10 epochs respectively.
 Here are the models,
